@@ -20,7 +20,7 @@ public class EditSMSFragment extends Fragment {
     }
 
     Button button;
-    EditText msgET;
+    EditText msgET,numberET;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -28,10 +28,11 @@ public class EditSMSFragment extends Fragment {
         View view=inflater.inflate(R.layout.fragment_edit_sms, container, false);
         button=view.findViewById(R.id.sendBtn);
         msgET=view.findViewById(R.id.messageBodyET);
+        numberET=view.findViewById(R.id.numberET);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onButtonPressed(msgET.getText().toString());
+                onButtonPressed(msgET.getText().toString(), Integer.parseInt(numberET.getText().toString()));
             }
         });
 
@@ -39,9 +40,9 @@ public class EditSMSFragment extends Fragment {
     }
 
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(String msg) {
+    public void onButtonPressed(String msg,int number) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(msg);
+            mListener.onFragmentInteraction(msg,number);
         }
     }
 
@@ -64,6 +65,6 @@ public class EditSMSFragment extends Fragment {
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(String msg);
+        void onFragmentInteraction(String msg,int number);
     }
 }
