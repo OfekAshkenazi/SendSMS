@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/smsItem_menu"
+    android:title="Send SMS"
+        android:icon="@mipmap/ic_menu_message"/>
+    <item android:id="@+id/picItem_menu"
+        android:title="Take a Picture"
+        android:icon="@drawable/ic_menu_camera"/>
+
+</menu>
